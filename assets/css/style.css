@@ -1,25 +1,8 @@
-/* CSS => Cascading StyleSheet(Folha de estilo em cascata)
-
-Estrutura
-
-Regra CSS:
-seletor {
-    propriedade: valor; -> declaração
-}
-
-CSS BEM
-
-B -> Bloco
-E -> Elemento
-M -> Modificador
-
-font-family: 'Roboto', sans-serif;
-
-*/
-
 /* BODY */
 body{
     font-family: 'Roboto', sans-serif;
+    padding-top:2em;
+    transition:all 0.3s ease;
 }
 
 .container{
@@ -45,18 +28,15 @@ body{
 .cabecalho__logo{
     margin-bottom: 50px;
 }
-.cabecalho__logo img{}
 .cabecalho__logo figcaption{
     display: none;
 }
-
-.cabecalho__menuNavegacao{}
-.cabecalho__menuLista{}
 .cabecalho__menuItem{
     margin-bottom: 25px;
 }
 .cabecalho__menuItem img{
     max-width: 26px;
+    border-radius:50px;
 }
 .cabecalho__menuItem a{
     color: #000;
@@ -64,7 +44,9 @@ body{
     font-size: 22px;
     vertical-align: top;
 }
-
+body.dark .cabecalho__menuItem a {
+    color:#FFF;
+}
 
 /* CONTEÚDO PRINCIPAL */
 .conteudoPrincipal{
@@ -72,10 +54,16 @@ body{
     border-left: 1px solid #e7ecf0;
     border-right: 1px solid #e7ecf0;
 }
+body.dark .conteudoPrincipal {
+    border-left:1px solid #828282;
+    border-right:1px solid #828282;
+}
 .conteudoPrincipal__titulo{
     padding: 10px 30px;
 }
-
+body.dark .conteudoPrincipal__titulo {
+    color:#FFF;
+}
 .conteudoPrincipal__formulario{
     padding: 10px 30px;
     border-top: 1px solid #e7ecf0;
@@ -90,15 +78,19 @@ body{
     resize: none;
     height: 55px;
 }
+body.dark .conteudoPrincipal__formulario textarea{
+    background:#e7ecf0;
+    color:#fff;
+    border-radius:10px;
+}
 .conteudoPrincipal__formulario button{
     background-color: #1da1f2;
     border: none;
     padding: 8px 20px;
     color: #fff;
     border-radius: 20px;
+    margin-top:5px;
 }
-
-.conteudoPrincipal__feed{}
 .conteudoPrincipal__listaTweets{
     display: flex;
     flex-flow: column-reverse nowrap;
@@ -110,18 +102,71 @@ body{
     border-bottom: 1px solid #e7ecf0;
 }
 
-.tweet__fotoPerfil{}
 .tweet__conteudo{
     margin-left: 15px;
 }
 .tweet__conteudo h2{
     display: inline-block;
 }
+body.dark .tweet__conteudo h2 {
+    color:#fff;
+}
 .tweet__conteudo span{
     display: inline-block;
     color: #828282;
 }
+body.dark .tweet__conteudo span {
+    color:#e7ecf0;
+}
 .tweet__conteudo p{
     margin-top: 15px;
     color: #333333;
+}
+body.dark .tweet__conteudo p {
+    color:#e7ecf0;
+}
+/* Fim da estrutura apresentada na transmissão ao vivo da Kenzie Academy */
+
+img.tweet__fotoPerfil {
+    display:inline-block;
+    width:50px;
+    height:50px;
+    border-radius:50px;
+}
+
+body.dark {
+    transition:all 0.3s ease;
+    background:#0C0C0C;
+}
+
+li.cabecalho__menuItem.btn-dark {
+    background:#fff;
+    border:1px solid ##0C0C0C;
+    border-radius:50px;
+    cursor:pointer;
+    width:70px;
+}
+
+body.dark li.cabecalho__menuItem.btn-dark {
+    border:1px solid #e7ecf0;
+}
+
+body.dark li.cabecalho__menuItem.btn-dark {
+    background:##0C0C0C;
+}
+
+li.cabecalho__menuItem span.material-icons {
+    font-size:28px;
+    background:#fff;
+    display:inline;
+    vertical-align:middle;
+    transition:all 0.3s ease;
+    border-radius:50px;
+}
+
+body.dark li.cabecalho__menuItem.btn-dark span.material-icons {
+    background:##0C0C0C;
+    color:#fff;
+    border:1px solid #fff;
+    margin-left:38px;
 }
